@@ -1,11 +1,13 @@
 const RideType = () => {
     return (
         <>
-            <Nearest />
-            <Upcoming />
-            <Past />
+            <button />
+            <button />
+            <button />
         </>
     );
 }
+
+export default RideType;
 
 // TODO: add event listeners

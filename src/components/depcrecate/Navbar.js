@@ -7,3 +7,5 @@ const Navbar = () => {
         <Filter />
     );
 }
+
+//NOT REQUIRED

@@ -1,7 +1,12 @@
 const Header = () => {
     return (
-        <p>Edvora</p>
-        <User />
+        <>
+            <p>Edvora</p>
+            <div>
+                <span>Dhruv Singh</span>
+                <img src='../assets/map.svg' alt='user' />
+            </div>
+        </>
     );
 }
 
