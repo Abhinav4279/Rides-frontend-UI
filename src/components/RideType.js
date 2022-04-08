@@ -7,3 +7,5 @@ const RideType = () => {
         </>
     );
 }
+
+// TODO: add event listeners
