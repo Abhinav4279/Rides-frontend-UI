@@ -1,7 +1,7 @@
-const Rides = ({ rides }) => {
+const Rides = ({ rides, origin }) => {
 
     const list = rides.map(ride => 
-        <li key={ride.id}><Ride ride={ride} /></li>
+        <li key={ride.id}><Ride ride={ride} origin={origin}/></li>
     );
 
     return (
@@ -11,7 +11,7 @@ const Rides = ({ rides }) => {
     );
 }
 
-const Ride = ({ride}) => {
+const Ride = ({ ride, origin }) => {
     return (
         //ul, li
         <div>
@@ -19,7 +19,7 @@ const Ride = ({ride}) => {
             <p>Origin Station: {ride.origin_station_code}</p>
             <p>station_path: {ride.destination_station_code}</p>
             <p>Date: {ride.date}</p>
-            <p>Distance: </p>
+            <p>Distance: {ride.station_path.reduce((prev, curr) => Math.min(Math.abs(origin - curr), prev), 1e9)}</p>
         </div>
     );
 }

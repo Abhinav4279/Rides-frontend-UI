@@ -42,8 +42,8 @@ const RidesInterface = () => {
     const sortNearest = (rides, origin) => {
         const upd_rides = [...rides];
         upd_rides.sort((a, b) => {
-            let a_dist = a.reduce((prev, curr) => Math.min(Math.abs(origin - curr), prev), MX);
-            let b_dist = b.reduce((prev, curr) => Math.min(Math.abs(origin - curr), prev), MX);
+            let a_dist = a.station_path.reduce((prev, curr) => Math.min(Math.abs(origin - curr), prev), MX);
+            let b_dist = b.station_path.reduce((prev, curr) => Math.min(Math.abs(origin - curr), prev), MX);
 
             return a_dist < b_dist;
         });
@@ -82,7 +82,7 @@ const RidesInterface = () => {
                 <RideType rides={rides} onClick={handleRideCategoryUpdate}/>
                 <Filter rides={rides} onCityClick={handleCityFilter} onStateClick={handleStateFilter}/>
             </nav>
-            <Rides rides={rides}/>
+            <Rides rides={rides} origin={user_origin}/>
         </div>
     );
 }
