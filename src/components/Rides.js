@@ -15,10 +15,10 @@ const Ride = ({ride}) => {
     return (
         //ul, li
         <div>
-            <p>Ride id:</p>
-            <p>Origin Station: </p>
-            <p>station_path: </p>
-            <p>Date:</p>
+            <p>Ride id: {ride.id}</p>
+            <p>Origin Station: {ride.origin_station_code}</p>
+            <p>station_path: {ride.destination_station_code}</p>
+            <p>Date: {ride.date}</p>
             <p>Distance: </p>
         </div>
     );

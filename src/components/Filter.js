@@ -3,6 +3,7 @@ const Filter = () => {
 
         <form>
             <input type='text' />
+            <input type='text' />
         </form>
     );
 }

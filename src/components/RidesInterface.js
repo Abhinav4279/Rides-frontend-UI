@@ -4,6 +4,7 @@ import Rides from './Rides'
 import Filter from './Filter'
 
 const URL = '';
+const MX = 1e9 + 7;
 
 const RidesInterface = () => {
     //TODO: Define state
@@ -19,6 +20,8 @@ const RidesInterface = () => {
             city: "Panvel"
           },
     ]);
+
+    const [user_origin, setUserOrigin] = useState(40);
 
     // TODO: update data on changing ride category
     // const [ride_category, setRide_category] = useState('nearest');
@@ -36,19 +39,48 @@ const RidesInterface = () => {
     // }
     // , []);
 
-    const handleFilterUpdate = () => {
+    const sortNearest = (rides, origin) => {
+        const upd_rides = [...rides];
+        upd_rides.sort((a, b) => {
+            let a_dist = a.reduce((prev, curr) => Math.min(Math.abs(origin - curr), prev), MX);
+            let b_dist = b.reduce((prev, curr) => Math.min(Math.abs(origin - curr), prev), MX);
 
+            return a_dist < b_dist;
+        });
+
+        return upd_rides;
     }
 
-    const handleRideCategoryUpdate = () => {
+    const handleStateFilter = (e) => {
+        const tar = e.target.value;
+        const upd_rides = rides.filter(ride => (ride.state === tar));
+        setRides(upd_rides);
+    }
 
+    const handleCityFilter = (e) => {
+        const tar = e.target.value;
+        const upd_rides = rides.filter(ride => (ride.city === tar));
+        setRides(upd_rides);
+    }
+
+    const handleRideCategoryUpdate = (type, origin = user_origin) => {
+        if(type == 'nearest') {
+            const upd_rides = sortNearest(rides, origin);
+            setRides(upd_rides);
+        } else if(type == 'upcoming') {
+            const upd_rides = rides.filter(ride => ride.date > Date.now());
+            setRides(upd_rides);
+        } else if(type == 'past'){
+            const upd_rides = rides.filter(ride => ride.date <= Date.now());
+            setRides(upd_rides);
+        }
     }
 
     return (
         <div>
             <nav>
                 <RideType rides={rides} onClick={handleRideCategoryUpdate}/>
-                <Filter rides={rides} onClick={handleFilterUpdate}/>
+                <Filter rides={rides} onCityClick={handleCityFilter} onStateClick={handleStateFilter}/>
             </nav>
             <Rides rides={rides}/>
         </div>
