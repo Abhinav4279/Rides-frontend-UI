@@ -1,10 +1,10 @@
-const RideType = () => {
+const RideType = ({ onClick }) => {
     return (
-        <>
-            <button />
-            <button />
-            <button />
-        </>
+        <div>
+            <button onClick={() => onClick('nearest')}>Nearest Rides</button>
+            <button onClick={() => onClick('upcoming')}>Upcoming Rides</button>
+            <button onClick={() => onClick('past')}>Past Rides</button>
+        </div>
     );
 }
 
