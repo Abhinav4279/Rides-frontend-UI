@@ -1,5 +1,4 @@
 const Header = ({ user }) => {
-    console.log(user.profile_key);
     return (
         <>
             <p>Edvora</p>

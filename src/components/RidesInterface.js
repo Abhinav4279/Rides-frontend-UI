@@ -11,7 +11,7 @@ const RidesInterface = ({ user }) => {
     const [glob, setGlob] = useState('');
     const [rides, setRides] = useState([...glob]);
 
-    const [user_origin, setUserOrigin] = useState(user.station_code);
+    const user_origin = user.station_code;
     const [city, setCity] = useState('');
     const [state, setState] = useState('');
 
@@ -22,7 +22,6 @@ const RidesInterface = ({ user }) => {
 
             setGlob(upd_rides);
             setRides(upd_rides);
-            setUserOrigin(user.station_code);
         };
 
         fetchData();
@@ -41,7 +40,6 @@ const RidesInterface = ({ user }) => {
 
         upd_rides = upd_rides.filter(ride => (ride.city === city || city === '') && (ride.state === state || state === ''));
 
-        console.log(upd_rides.length);
         return upd_rides;
     }
 
@@ -66,7 +64,6 @@ const RidesInterface = ({ user }) => {
             setRides(upd_rides);
         } 
         else if(type === 'upcoming') {
-            console.log(Date.now());
             let upd_rides = glob.filter(ride => getDate(ride.date) > Date.now());
             upd_rides = upd_rides.filter(ride => (ride.city === city || city === '') && (ride.state === state || state === ''));
    
