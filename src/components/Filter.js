@@ -15,7 +15,7 @@ const Filter = ({ onCityClick, onStateClick }) => {
 
     const handleStateChange = (e) => {
         setState(e.target.value);
-        onStateClick(state);
+        onStateClick(e.target.value);
     }
 
     return (
