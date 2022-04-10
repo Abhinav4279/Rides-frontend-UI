@@ -21,6 +21,7 @@ const Ride = ({ ride, origin }) => {
             <p>Origin Station: {ride.origin_station_code}</p>
             <p>station_path: {ride.destination_station_code}</p>
             <p>Distance: {ride.station_path.reduce((prev, curr) => Math.min(Math.abs(origin - curr), prev), 1e9)}</p>
+            {/* <p>station_path: {ride.city}</p> */}
         </div>
     );
 }
