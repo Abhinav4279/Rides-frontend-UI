@@ -1,6 +1,5 @@
-import './App.css';
-import Header from './components/Header';
-import RidesInterface from './components/RidesInterface'
+import Header from './Header';
+import RidesInterface from './RidesInterface'
 import { useState, useEffect } from "react";
 const URL = 'https://assessment.api.vweb.app/user';
 

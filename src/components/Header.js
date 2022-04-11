@@ -1,12 +1,14 @@
+import './Header.css';
+
 const Header = ({ user }) => {
     return (
-        <>
-            <p>Edvora</p>
+        <div className='container'>
+            <h1>Edvora</h1>
             <div>
-                <span>{user.name}</span>
+                <h2>{user.name}</h2>
                 {user.profile_key && <img src={user.profile_key} alt='user' />}
             </div>
-        </>
+        </div>
     );
 }
 

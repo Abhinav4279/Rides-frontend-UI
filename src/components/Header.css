@@ -1,0 +1,15 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    background-color: #101010;
+}
+
+h1 {
+    margin: 0.5rem 1rem;
+    font-size: large;
+}
+
+h2 {
+    margin: 0.5rem 1rem;
+    font-size: medium;
+}
