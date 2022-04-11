@@ -1,5 +1,7 @@
 button {
     background: transparent;
+    margin: 0.2rem;
+    margin-right: 2rem;
     border: 0px;
     color: #D0CBCB;
 }

@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import './Filter.css'
 
 const Filter = ({ onCityClick, onStateClick }) => {
     //Making use of controlled components
@@ -21,6 +22,7 @@ const Filter = ({ onCityClick, onStateClick }) => {
     return (
 
         <div>
+            <span>Filters: </span>
             <input type='text' value={city} placeholder="Click ride-type after input" onChange={(e) => handleCityChange(e)}/>
             <input type='text' value={state} placeholder="Click ride-type after input" onChange={(e) => handleStateChange(e)}/>
         </div>

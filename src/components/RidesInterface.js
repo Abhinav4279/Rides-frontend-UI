@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import RideType from './RideType'
 import Rides from './Rides'
 import Filter from './Filter'
+import './RidesInterface.css'
 
 const URL = 'https://assessment.api.vweb.app/rides';
 const MX = 1e9 + 7;

@@ -1,0 +1,16 @@
+input {
+    background-color: #232323;
+    border: none;
+    border-radius: 0.2rem;
+    padding: 0.2rem 0.2rem 0.2rem 0.5rem;
+    overflow: auto;
+    outline: none;
+    color: #fff;
+    margin: 0.2rem 0.5rem;
+}
+
+span {
+    font-size: small;
+    margin-right: 0.5rem;
+    font-weight: medium;
+}
