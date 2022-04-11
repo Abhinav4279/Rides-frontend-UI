@@ -1,0 +1,11 @@
+button {
+    background: transparent;
+    border: 0px;
+    color: #D0CBCB;
+}
+
+.active {
+    color: #fff;
+    border-bottom: 0.2rem solid #fff;
+    border-radius: 0.08rem;
+}
