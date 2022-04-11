@@ -1,4 +1,5 @@
-// import mp from '.../assets/map.png';
+import mp from '../map.png';
+import './Rides.css'
 
 const Rides = ({ rides, origin }) => {
 
@@ -7,7 +8,7 @@ const Rides = ({ rides, origin }) => {
     );
 
     return (
-        <ul>
+        <ul style={{listStyleType: "none"}}>
             {list}
         </ul>
     );
@@ -16,8 +17,8 @@ const Rides = ({ rides, origin }) => {
 const Ride = ({ ride, origin }) => {
     return (
         //ul, li
-        <div>
-            {/* <img src={mp} alt="map"/> */}
+        <div className='card'>
+            <img src={mp} alt="map"/>
             <div>
                 <p>Ride id: {ride.id}</p>
                 <p>Origin Station: {ride.origin_station_code}</p>
@@ -25,6 +26,10 @@ const Ride = ({ ride, origin }) => {
                 <p>Date: {ride.date.toString()}</p>
                 <p>Distance: {ride.station_path.reduce((prev, curr) => Math.min(Math.abs(origin - curr), prev), 1e9)}</p>
                 {/* <p>station_path: {ride.city}</p> */}
+            </div>
+            <div className="loc">
+                <span>{ride.city}</span>
+                <span>{ride.state}</span>
             </div>
         </div>
     );
