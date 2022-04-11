@@ -1,7 +1,10 @@
 import './RideType.css'
 import { useState } from 'react'
 
+//Ride types -> nearest, upcoming, past
 const RideType = ({ onClick}) => {
+    
+    //using active state to toggle "active" css class for styling purposes
     const [active, setActive] = useState(0);
 
     return (

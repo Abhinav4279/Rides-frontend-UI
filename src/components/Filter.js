@@ -1,16 +1,14 @@
 import { useState } from 'react'
 import './Filter.css'
 
+//state(pradesh) and city filter
 const Filter = ({ onCityClick, onStateClick }) => {
     //Making use of controlled components
     const [city, setCity] = useState('');
     const [state, setState] = useState('');
 
-
-    //Some error
     const handleCityChange = (e) => {
         setCity(e.target.value);
-        // console.log(city);
         onCityClick(e.target.value);
     }
 
