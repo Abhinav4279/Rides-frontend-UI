@@ -21,8 +21,8 @@ const Filter = ({ onCityClick, onStateClick }) => {
 
         <div>
             <span>Filters: </span>
-            <input type='text' value={city} placeholder="Click ride-type after input" onChange={(e) => handleCityChange(e)}/>
-            <input type='text' value={state} placeholder="Click ride-type after input" onChange={(e) => handleStateChange(e)}/>
+            <input type='text' value={city} placeholder="City: Click ride-type after input" onChange={(e) => handleCityChange(e)}/>
+            <input type='text' value={state} placeholder="State: Click ride-type after input" onChange={(e) => handleStateChange(e)}/>
         </div>
     );
 }
