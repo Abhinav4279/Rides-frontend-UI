@@ -1,4 +1,4 @@
-# Edvora-frontend-task
+# Rides-frontend-task
 
 A react web-app to showcase rides based upon filters, user data and input. 
 
