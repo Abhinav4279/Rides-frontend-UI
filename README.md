@@ -1,4 +1,4 @@
-# Rides-frontend-task
+# Rides-frontend-UI
 
 A react web-app to showcase rides based upon filters, user data and input. 
 
